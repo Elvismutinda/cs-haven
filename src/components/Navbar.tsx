@@ -12,7 +12,7 @@ const Navbar = async () => {
       <div className="container max-w-7xl h-full mx-auto flex items-center justify-between gap-2">
         {/* Logo */}
         <Link href="/" className="flex gap-2 items-center">
-          <Image src="/cs-haven.svg" width={50} height={43} alt="logo" />
+          <Image src="/cs-haven.svg" width={43} height={43} alt="logo" />
           <p className="hidden text-zinc-700 text-sm font-medium md:block">
             CS HAVEN
           </p>
