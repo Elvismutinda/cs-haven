@@ -1,6 +1,5 @@
 import { db } from '@/lib/db'
 import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { Github } from 'lucide-react'
 import { nanoid } from 'nanoid'
 import { NextAuthOptions, getServerSession } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
