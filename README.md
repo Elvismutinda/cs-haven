@@ -1,12 +1,19 @@
 # CS HAVEN
 
-This is a web application for students to share their projects and carry out discussions.
+This is a full-stack web application for students to share their projects and carry out discussions.
 
 Built with Next.js
 
 ### The application is still in development!!!
 
 ## How To Run the App
+
+#### Prerequisites (If you want to create a copy of the site)
+
+* Node v14 +
+* MySQL database
+* Google cloud provider credentials
+* Github provider credentials
 
 1. Clone the repository
 
