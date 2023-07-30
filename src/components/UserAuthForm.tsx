@@ -7,11 +7,12 @@ import Image from "next/image";
 import { useToast } from "../hooks/use-toast";
 
 const UserAuthForm = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
+  const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
   const { toast } = useToast();
 
   const logInWithGoogle = async () => {
-    setIsLoading(true);
+    setIsGoogleLoading(true);
 
     try {
       //throw new Error("test");
@@ -24,12 +25,12 @@ const UserAuthForm = () => {
         variant: "destructive",
       });
     } finally {
-      setIsLoading(false);
+      setIsGoogleLoading(false);
     }
   };
 
   const logInWithGithub = async () => {
-    setIsLoading(true);
+    setIsGithubLoading(true);
 
     try {
       await signIn("github");
@@ -41,7 +42,7 @@ const UserAuthForm = () => {
         variant: "destructive",
       });
     } finally {
-      setIsLoading(false);
+      setIsGithubLoading(false);
     }
   };
 
@@ -50,12 +51,12 @@ const UserAuthForm = () => {
       <Button
         type="button"
         onClick={logInWithGoogle}
-        isLoading={isLoading}
+        isLoading={isGoogleLoading}
         size="sm"
         className=""
         
       >
-        {isLoading ? null : (
+        {isGoogleLoading ? null : (
           <Image
             className="mr-2"
             src="/google.svg"
@@ -68,11 +69,11 @@ const UserAuthForm = () => {
       </Button>
       <Button
         onClick={logInWithGithub}
-        isLoading={isLoading}
+        isLoading={isGithubLoading}
         size="sm"
         className="ml-2"
       >
-        {isLoading ? null : (
+        {isGithubLoading ? null : (
           <Image
             className="mr-2"
             src="/github-mark-white.svg"
