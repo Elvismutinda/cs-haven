@@ -18,10 +18,36 @@ const Navbar = async () => {
           </p>
         </Link>
 
+        {/* TODO: Add Github and Discord links next to org logo */}
+
+        {/* <Link
+          href="https://github.com/cshaven-org"
+          target="_blank"
+        >
+          <Image
+            src="/github-mark.svg"
+            width={23}
+            height={23}
+            alt="github logo"
+          />
+        </Link>
+
+        <Link
+          href="https://discord.com"
+          target="_blank"
+        >
+          <Image
+            src="/discord-alt.svg"
+            width={23}
+            height={23}
+            alt="discord logo"
+          />
+        </Link> */}
+
         {/* Search bar */}
 
         {session?.user ? (
-          <UserAccountNav user={session.user}/>
+          <UserAccountNav user={session.user} />
         ) : (
           <Link href="/sign-in" className={buttonVariants()}>
             Sign In
