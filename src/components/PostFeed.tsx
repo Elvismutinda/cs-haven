@@ -21,9 +21,9 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
     threshold: 1,
   });
 
-  const {data: session} = useSession();
+  const { data: session } = useSession();
 
-  const {data, fetchNextPage, isFetchingNextPage} = useInfiniteQuery(
+  const { data, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
     ["infinite-query"],
     async ({ pageParam = 1 }) => {
       const query =
@@ -42,7 +42,7 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
   );
 
   const posts = data?.pages.flatMap((page) => page) ?? initialPosts;
-  
+
   return (
     <ul className="flex flex-col col-span-2 space-y-6">
       {posts.map((post, index) => {
@@ -63,11 +63,24 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
         if (index === posts.length - 1) {
           return (
             <li key={post.id} ref={ref}>
-              <Post />
+              <Post
+                post={post}
+                commentAmt={post.comments.length}
+                communityName={post.community.name}
+                votesAmt={votesAmt}
+              />
             </li>
           );
         } else {
-            return <Post />
+          return (
+            <Post
+              key={post.id}
+              post={post}
+              commentAmt={post.comments.length}
+              communityName={post.community.name}
+              votesAmt={votesAmt}
+            />
+          );
         }
       })}
 
