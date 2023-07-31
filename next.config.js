@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['lh3.googleusercontent.com']
+        domains: ['lh3.googleusercontent.com', 'uploadthing.com']
     },
+    experimental: {
+        appDir: true
+    }
 }
 
 module.exports = nextConfig
