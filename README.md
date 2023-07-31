@@ -14,6 +14,7 @@ Built with Next.js
 * MySQL database
 * Google cloud provider credentials
 * Github provider credentials
+* Uploadthing credentials
 
 1. Clone the repository
 
