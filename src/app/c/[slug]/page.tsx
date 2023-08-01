@@ -43,7 +43,7 @@ const page = async ({ params }: PageProps) => {
         c/{community.name}
       </h1>
       <MiniCreatePost session={session} />
-      {/* TODO: Show posts in user feed */}
+      {/* posts in user feed */}
       <PostFeed initialPosts={community.posts} communityName={community.name} />
     </>
   );
