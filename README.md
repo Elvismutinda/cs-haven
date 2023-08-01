@@ -2,7 +2,7 @@
 
 This is a full-stack web application for students to share their projects and carry out discussions.
 
-Built with Next.js
+Built with Next.js (React, TypeScript, Next-Auth, Prisma, MySQL, Tailwind)
 
 ### The application is still in development!!!
 
