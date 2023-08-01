@@ -68,6 +68,7 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
                 commentAmt={post.comments.length}
                 communityName={post.community.name}
                 votesAmt={votesAmt}
+                currentVote={currenVote}
               />
             </li>
           );
@@ -79,6 +80,7 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
               commentAmt={post.comments.length}
               communityName={post.community.name}
               votesAmt={votesAmt}
+              currentVote={currenVote}
             />
           );
         }
