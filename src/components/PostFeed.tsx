@@ -33,6 +33,7 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
       const { data } = await axios.get(query);
       return data as ExtendedPost[];
     },
+
     {
       getNextPageParam: (_, pages) => {
         return pages.length + 1;
@@ -47,12 +48,8 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
     <ul className="flex flex-col col-span-2 space-y-6">
       {posts.map((post, index) => {
         const votesAmt = post.votes.reduce((acc, vote) => {
-          if (vote.type === "UP") {
-            return acc + 1;
-          }
-          if (vote.type === "DOWN") {
-            return acc - 1;
-          }
+          if (vote.type === "UP") return acc + 1;
+          if (vote.type === "DOWN") return acc - 1;
           return acc;
         }, 0);
 
