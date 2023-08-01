@@ -7,6 +7,9 @@ import { useCustomToasts } from "@/hooks/use-custom-toasts";
 import { useEffect, useState } from "react";
 import { usePrevious } from "@mantine/hooks";
 import { cn } from "@/lib/utils";
+import { useMutation } from "@tanstack/react-query";
+import { PostVoteRequest } from "@/lib/validators/vote";
+import axios from "axios";
 
 interface PostVoteClientProps {
   postId: string;
@@ -24,9 +27,21 @@ const PostVoteClient = ({
   const [currentVote, setCurrentVote] = useState(initialVote);
   const prevVote = usePrevious(currentVote);
 
+  // Update vote count when vote changes (syncing with server)
   useEffect(() => {
     setCurrentVote(initialVote);
   }, [initialVote]);
+
+  const { mutate: vote } = useMutation({
+    mutationFn: async (type: VoteType) => {
+        const payload: PostVoteRequest = {
+            postId: postId,
+            voteType: type,
+        }
+
+        await axios.patch('/api/community/post/vote', payload)
+    }
+  })
 
   return (
     <div className="flex sm:flex-col gap-4 sm:gap-0 pr-6 sm:w-20 pb-4 sm:pb-0">
