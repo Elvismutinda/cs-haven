@@ -13,6 +13,8 @@ import { toast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 
+import '@/styles/editor.css'
+
 type FormData = z.infer<typeof PostValidator>;
 
 interface EditorProps {
@@ -24,7 +26,7 @@ const Editor = ({ communityId }: EditorProps) => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<PostCreationRequest>({
+  } = useForm<FormData>({
     resolver: zodResolver(PostValidator),
     defaultValues: {
       communityId,

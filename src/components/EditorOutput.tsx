@@ -8,7 +8,7 @@ const Output = dynamic(
   { ssr: false }
 );
 
-interface Props {
+interface EditorOutputProps {
   content: any;
 }
 
@@ -24,7 +24,7 @@ const style = {
   },
 };
 
-const EditorOutput = ({ content }: Props) => {
+const EditorOutput = ({ content }: EditorOutputProps) => {
   return (
     // @ts-expect-error
     <Output
