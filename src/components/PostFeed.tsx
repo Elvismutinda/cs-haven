@@ -60,7 +60,7 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
           return acc;
         }, 0);
 
-        const currenVote = post.votes.find(
+        const currentVote = post.votes.find(
           (vote) => vote.userId === session?.user.id
         );
 
@@ -72,7 +72,7 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
                 commentAmt={post.comments.length}
                 communityName={post.community.name}
                 votesAmt={votesAmt}
-                currentVote={currenVote}
+                currentVote={currentVote}
               />
             </li>
           );
@@ -84,7 +84,7 @@ const PostFeed = ({ initialPosts, communityName }: PostFeedProps) => {
               commentAmt={post.comments.length}
               communityName={post.community.name}
               votesAmt={votesAmt}
-              currentVote={currenVote}
+              currentVote={currentVote}
             />
           );
         }
