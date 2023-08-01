@@ -6,3 +6,5 @@ export const PostVoteValidator = z.object({
 })
 
 export type PostVoteRequest = z.infer<typeof PostVoteValidator>
+
+// TODO: Add validation for comment votes
