@@ -24,8 +24,8 @@ interface PostProps {
 const Post = ({
   communityName,
   post,
-  votesAmt,
-  currentVote,
+  votesAmt: _votesAmt,
+  currentVote: _currentVote,
   commentAmt,
 }: PostProps) => {
   const pRef = useRef<HTMLParagraphElement>(null);
@@ -33,7 +33,11 @@ const Post = ({
     <div className="rounded-md bg-white shadow">
       <div className="px-6 py-4 flex justify-between">
         {/* Post Votes */}
-        <PostVoteClient postId={post.id} initialVoteAmt={votesAmt} initialVote={currentVote?.type} />
+        <PostVoteClient
+          postId={post.id}
+          initialVotesAmt={_votesAmt}
+          initialVote={_currentVote?.type}
+        />
         <div className="w-0 flex-1">
           <div className="max-h-40 mt-1 text-xs text-gray-500">
             {communityName ? (
@@ -47,7 +51,7 @@ const Post = ({
                 <span className="px-1">•</span>
               </>
             ) : null}
-            <span>Posted by u/{post.author.name}</span>{" "}
+            <span>Posted by u/{post.author.username}</span>{" "}
             {formatTimeToNow(new Date(post.createdAt))}
           </div>
 
