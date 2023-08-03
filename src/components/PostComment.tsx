@@ -139,6 +139,7 @@ const PostComment = ({
               </Button>
               <Button
                 isLoading={isLoading}
+                disabled={input.length === 0}
                 onClick={() => {
                   if (!input)
                     return postComment({
