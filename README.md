@@ -24,6 +24,7 @@ Built with every cool aspect in Next.js 13.
 - [x] ~Creating and joining communities.~
 - [x] ~Creating posts (project posts and discussion posts).~
 - [x] ~Displaying posts in user feed. (Both logged in and not logged in).~
+- [x] ~Commenting on posts and other peoples comments.~
 - [x] ~Voting for posts and comments in discussions.~
 - [x] Search functionality.
 - [x] Donations (Might take a while to get into).
