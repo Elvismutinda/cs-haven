@@ -11,39 +11,39 @@ const Navbar = async () => {
   return (
     <div className="fixed top-0 inset-x-0 h-fit bg-zinc-100 border-b border-zinc-300 z-[10] py-2">
       <div className="container max-w-7xl h-full mx-auto flex items-center justify-between gap-2">
-        {/* Logo */}
-        <Link href="/" className="flex gap-2 items-center">
-          <Image src="/cs-haven.svg" width={43} height={43} alt="logo" />
-          <p className="hidden text-zinc-700 text-sm font-medium md:block">
-            CS HAVEN
-          </p>
-        </Link>
+        <div className="flex gap-6 md:gap-10">
+          {/* Logo */}
+          <Link href="/" className="flex gap-2 items-center">
+            <Image src="/cs-haven.svg" width={43} height={43} alt="logo" />
+            <p className="hidden text-zinc-700 text-sm font-medium md:block">
+              CS HAVEN
+            </p>
+          </Link>
 
-        {/* TODO: Add Github and Discord links next to org logo */}
+          {/* TODO: Add Github and Discord links next to org logo */}
 
-        {/* <Link
-          href="https://github.com/cshaven-org"
-          target="_blank"
-        >
-          <Image
-            src="/github-mark.svg"
-            width={23}
-            height={23}
-            alt="github logo"
-          />
-        </Link>
+          <Link
+            href="https://github.com/cshaven-org"
+            target="_blank"
+            className="pt-3"
+          >
+            <Image
+              src="/github-mark.svg"
+              width={23}
+              height={23}
+              alt="github logo"
+            />
+          </Link>
 
-        <Link
-          href="https://discord.com"
-          target="_blank"
-        >
-          <Image
-            src="/discord-alt.svg"
-            width={23}
-            height={23}
-            alt="discord logo"
-          />
-        </Link> */}
+          <Link href="https://discord.com" target="_blank" className="pt-3">
+            <Image
+              src="/discord-alt.svg"
+              width={23}
+              height={23}
+              alt="discord logo"
+            />
+          </Link>
+        </div>
 
         {/* Search bar */}
         <SearchBar />
@@ -52,7 +52,7 @@ const Navbar = async () => {
           <UserAccountNav user={session.user} />
         ) : (
           <Link href="/sign-in" className={buttonVariants()}>
-            Sign In
+            Login
           </Link>
         )}
       </div>
