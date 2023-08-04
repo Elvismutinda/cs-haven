@@ -23,7 +23,7 @@ const page = async () => {
           <UserNameForm
             user={{
               id: session.user.id,
-              username: session.user.username || ",",
+              username: session.user.username || "",
             }}
           />
         </div>
