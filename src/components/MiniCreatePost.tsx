@@ -2,7 +2,6 @@
 
 import { Session } from "next-auth";
 import { usePathname, useRouter } from "next/navigation";
-import { FC } from "react";
 import { UserAvatar } from "./UserAvatar";
 import { Input } from "./ui/Input";
 import { Button } from "./ui/Button";
@@ -12,7 +11,7 @@ interface MiniCreatePostProps {
   session: Session | null;
 }
 
-const MiniCreatePost: FC<MiniCreatePostProps> = ({ session }) => {
+const MiniCreatePost = ({ session }: MiniCreatePostProps) => {
   const router = useRouter();
   const pathname = usePathname();
 
