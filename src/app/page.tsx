@@ -54,7 +54,7 @@ export default async function Home() {
                 <Link
                   href="https://github.com/cshaven-org"
                   target="_blank"
-                  className="pt-3"
+                  className="my-2 hover:scale-125 transition duration-300 ease-in-out"
                 >
                   <Image
                     src="/github-mark.svg"
@@ -67,7 +67,7 @@ export default async function Home() {
                 <Link
                   href="https://discord.com"
                   target="_blank"
-                  className="pt-3"
+                  className="my-2 hover:scale-125 transition duration-300 ease-in-out"
                 >
                   <Image
                     src="/discord-alt.svg"
