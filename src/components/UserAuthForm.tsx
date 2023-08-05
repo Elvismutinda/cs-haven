@@ -1,14 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { cn } from "@/lib/utils";
+import * as React from "react";
 import { Button } from "./ui/Button";
 import { signIn } from "next-auth/react";
 import Image from "next/image";
 import { useToast } from "../hooks/use-toast";
 
-const UserAuthForm = () => {
-  const [isGoogleLoading, setIsGoogleLoading] = useState<boolean>(false);
-  const [isGithubLoading, setIsGithubLoading] = useState<boolean>(false);
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
+  const [isGoogleLoading, setIsGoogleLoading] = React.useState<boolean>(false);
+  const [isGithubLoading, setIsGithubLoading] = React.useState<boolean>(false);
   const { toast } = useToast();
 
   const logInWithGoogle = async () => {
@@ -47,14 +50,12 @@ const UserAuthForm = () => {
   };
 
   return (
-    <div className="flex justify-center">
+    <div className={cn("flex justify-center", className)} {...props}>
       <Button
         type="button"
         onClick={logInWithGoogle}
         isLoading={isGoogleLoading}
         size="sm"
-        className=""
-        
       >
         {isGoogleLoading ? null : (
           <Image
@@ -83,7 +84,7 @@ const UserAuthForm = () => {
           />
         )}
         Github
-        </Button>
+      </Button>
     </div>
   );
 };
