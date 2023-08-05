@@ -3,6 +3,7 @@ import GeneralFeed from "@/components/homepage/GeneralFeed";
 import { buttonVariants } from "@/components/ui/Button";
 import { getAuthSession } from "@/lib/auth";
 import { HomeIcon } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -44,6 +45,39 @@ export default async function Home() {
             >
               Create Community
             </Link>
+
+            <div className="flex flex-col justify-center">
+              <p className="text-center">
+                Join our socials. Everyone is welcome
+              </p>
+              <div className="flex flex-row gap-6 justify-center">
+                <Link
+                  href="https://github.com/cshaven-org"
+                  target="_blank"
+                  className="pt-3"
+                >
+                  <Image
+                    src="/github-mark.svg"
+                    width={23}
+                    height={23}
+                    alt="github logo"
+                  />
+                </Link>
+
+                <Link
+                  href="https://discord.com"
+                  target="_blank"
+                  className="pt-3"
+                >
+                  <Image
+                    src="/discord-alt.svg"
+                    width={23}
+                    height={23}
+                    alt="discord logo"
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
