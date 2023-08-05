@@ -141,12 +141,12 @@ const PostComment = ({
                 isLoading={isLoading}
                 disabled={input.length === 0}
                 onClick={() => {
-                  if (!input)
-                    return postComment({
-                      postId,
-                      text: input,
-                      replyToId: comment.replyToId ?? comment.id,
-                    });
+                  if (!input) return;
+                  postComment({
+                    postId,
+                    text: input,
+                    replyToId: comment.replyToId ?? comment.id,
+                  });
                 }}
               >
                 Post
