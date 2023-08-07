@@ -9,27 +9,35 @@ const SignUp = () => {
         <Image
           className="mx-auto"
           src="/cs-haven.svg"
-          width={66}
-          height={43}
+          width={48}
+          height={48}
           alt="logo"
         />
-        <h1 className="text-2xl font-semibold tracking-tight">Sign Up</h1>
+        <h1 className="text-2xl font-semibold tracking-tight">
+          Create an account
+        </h1>
         <p className="text-sm max-w-xs mx-auto">
-          By continuing, you are setting up a CS Haven account and agree to our
-          User Agreement and Privacy Policy.
+          Enter your email below to create an account
         </p>
 
-        {/* Sign In form */}
         <UserAuthForm />
 
         <p className="px-8 text-center text-sm text-zinc-700">
-          Already a CS Haven member?{" "}
+          By clicking continue, you agree to our{" "}
           <Link
-            href="/sign-in"
-            className="hover:text-zinc-800 text-sm underline underline-offset-4"
+            href="/terms"
+            className="hover:text-brand underline underline-offset-4"
           >
-            Sign In
+            Terms of Service
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/privacy"
+            className="hover:text-brand underline underline-offset-4"
+          >
+            Privacy Policy
           </Link>
+          .
         </p>
       </div>
     </div>
