@@ -6,24 +6,26 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
   relationMode = "prisma"
 }
 
 model Account {
-  id                String @id @default(cuid())
-  userId            String @unique
+  id                String   @id @default(cuid())
+  userId            String   @unique
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?  @db.Text
+  access_token      String?  @db.Text
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?  @db.Text
   session_state     String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -31,89 +33,103 @@ model Account {
 }
 
 model Session {
-  id                String   @id @default(cuid())
-  sessionToken      String   @unique
-  userId            String
-  expires           DateTime
-  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model User {
-  id                  String    @id @default(cuid())
-  name                String?
-  email               String?   @unique
-  emailVerified       DateTime?
-  createdCommunities  Community[] @relation("CommunityOwner")
-  subscriptions       Subscription[]
-  votes               Vote[]
+  id                 String         @id @default(cuid())
+  name               String?
+  email              String?        @unique
+  emailVerified      DateTime?
+  createdCommunities Community[]    @relation("CommunityOwner")
+  subscriptions      Subscription[]
+  votes              Vote[]
 
-  username            String?   @unique
+  username  String?  @unique
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  image               String?
-  accounts            Account[]
-  sessions            Session[]
-  Post                Post[]
-  Comment             Comment[]
-  CommentVote         CommentVote[]
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
+  accounts    Account[]
+  sessions    Session[]
+  Post        Post[]
+  Comment     Comment[]
+  CommentVote CommentVote[]
+
+  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId          String?   @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+}
+
+model VerificationToken {
+  identifier String
+  token     String   @unique
+  expires   DateTime
+
+  @@unique([identifier, token])
+  @@map(name: "verification_tokens")
 }
 
 model Community {
-  id                 String    @id @default(cuid())
-  name               String @unique
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-  posts              Post[]
+  id        String   @id @default(cuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  posts     Post[]
 
-  creatorId          String?
-  Creator            User?     @relation("CommunityOwner", fields: [creatorId], references: [id])
-  subscribers        Subscription[]
+  creatorId   String?
+  Creator     User?          @relation("CommunityOwner", fields: [creatorId], references: [id])
+  subscribers Subscription[]
 
   @@index([name])
 }
 
 model Subscription {
-  user                User      @relation(fields: [userId], references: [id])
-  userId              String
-  community           Community @relation(fields: [communityId], references: [id])
-  communityId         String
+  user        User      @relation(fields: [userId], references: [id])
+  userId      String
+  community   Community @relation(fields: [communityId], references: [id])
+  communityId String
 
   @@id([userId, communityId])
 }
 
 model Post {
-  id                 String    @id @default(cuid())
-  title              String
-  content            Json?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
+  id        String   @id @default(cuid())
+  title     String
+  content   Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
-  author             User      @relation(fields: [authorId], references: [id])
-  authorId           String
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String
 
-  community          Community @relation(fields: [communityId], references: [id])
-  communityId        String
+  community   Community @relation(fields: [communityId], references: [id])
+  communityId String
 
-  comments           Comment[]
-  votes              Vote[]
+  comments Comment[]
+  votes    Vote[]
 }
 
 model Comment {
-  id                 String    @id @default(cuid())
-  text               String
-  createdAt          DateTime  @default(now())
-  author             User      @relation(fields: [authorId], references: [id])
-  authorId           String
-  post               Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
-  postId             String
+  id        String   @id @default(cuid())
+  text      String
+  createdAt DateTime @default(now())
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+  post      Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId    String
 
-  replyToId          String?
-  replyTo            Comment?  @relation("ReplyTo", fields: [replyToId], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  replies            Comment[] @relation("ReplyTo")
+  replyToId String?
+  replyTo   Comment?  @relation("ReplyTo", fields: [replyToId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  replies   Comment[] @relation("ReplyTo")
 
-  votes              CommentVote[]
-  commentId          String?
+  votes     CommentVote[]
+  commentId String?
 }
 
 enum VoteType {
@@ -122,21 +138,21 @@ enum VoteType {
 }
 
 model Vote {
-  user                User      @relation(fields: [userId], references: [id])
-  userId              String
-  post                Post      @relation(fields: [postId], references: [id], onDelete: Cascade)
-  postId              String
-  type                VoteType
+  user   User     @relation(fields: [userId], references: [id])
+  userId String
+  post   Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  postId String
+  type   VoteType
 
   @@id([userId, postId])
 }
 
 model CommentVote {
-  user                User      @relation(fields: [userId], references: [id])
-  userId              String
-  comment             Comment   @relation(fields: [commentId], references: [id], onDelete: Cascade)
-  commentId           String
-  type                VoteType
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  comment   Comment  @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  commentId String
+  type      VoteType
 
   @@id([userId, commentId])
 }
