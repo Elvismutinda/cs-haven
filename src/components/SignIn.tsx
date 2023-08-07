@@ -18,7 +18,6 @@ const SignIn = () => {
           Enter your email to sign in to your account
         </p>
 
-        {/* Sign In form */}
         <UserAuthForm />
 
         <p className="px-8 text-center text-sm text-zinc-700">
