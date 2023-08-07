@@ -9,14 +9,13 @@ const SignIn = () => {
         <Image
           className="mx-auto"
           src="/cs-haven.svg"
-          width={66}
-          height={43}
+          width={48}
+          height={48}
           alt="logo"
         />
         <h1 className="text-2xl font-semibold tracking-tight">Welcome Back</h1>
         <p className="text-sm max-w-xs mx-auto">
-          By continuing, you are setting up a CS Haven account and agree to our
-          User Agreement and Privacy Policy.
+          Enter your email to sign in to your account
         </p>
 
         {/* Sign In form */}
