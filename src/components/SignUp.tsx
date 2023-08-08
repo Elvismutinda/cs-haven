@@ -23,21 +23,13 @@ const SignUp = () => {
         <UserAuthForm />
 
         <p className="px-8 text-center text-sm text-zinc-700">
-          By clicking continue, you agree to our{" "}
+          Already a CS Haven member?{" "}
           <Link
-            href="/terms"
-            className="hover:text-brand underline underline-offset-4"
+            href="/sign-in"
+            className="hover:text-zinc-800 text-sm underline underline-offset-4"
           >
-            Terms of Service
-          </Link>{" "}
-          and{" "}
-          <Link
-            href="/privacy"
-            className="hover:text-brand underline underline-offset-4"
-          >
-            Privacy Policy
+            Sign In
           </Link>
-          .
         </p>
       </div>
     </div>
