@@ -12,7 +12,7 @@ const page = () => {
           href="/"
           className={cn(
             buttonVariants({ variant: "ghost" }),
-            "self-start -mt-20"
+            "absolute left-4 top-24 md:left-8 md:top-24"
           )}
         >
           <ChevronLeft className="mr-2 h-4 w-4" />
