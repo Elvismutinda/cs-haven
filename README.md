@@ -44,6 +44,7 @@ Built with every cool aspect in Next.js 13.
 * Github provider credentials.
 * Uploadthing credentials.
 * Upstash Redis credentials.
+* Postmark credentials. (You can use any email provider you're comfortable with, make sure to adjust the auth.ts and .env accordingly)
 
 1. Clone the repository.
 
