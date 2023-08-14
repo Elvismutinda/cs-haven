@@ -72,7 +72,7 @@ const Layout = async ({
           <div className="flex flex-col col-span-2 space-y-6">{children}</div>
 
           {/* Community Info sidebar */}
-          <div className="hidden md:block overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last">
+          <div className="overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last">
             <div className="px-6 py-4">
               <p className="font-semibold py-3">About c/{community.name}</p>
             </div>
@@ -89,7 +89,7 @@ const Layout = async ({
 
               <div className="flex justify-between gap-x-4 py-3">
                 <dt className="text-gray-500">Members</dt>
-                <dd className="text-gray-700">
+                <dd className="flex items-start gap-x-2">
                   <div className="text-gray-900">{memberCount}</div>
                 </dd>
               </div>
