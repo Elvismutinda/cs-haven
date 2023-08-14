@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { UserAvatar } from "./UserAvatar";
 import { Input } from "./ui/Input";
 import { Button } from "./ui/Button";
-import { Image as ImageIcon, Link2 } from "lucide-react";
+import { FiImage, FiLink2 } from "react-icons/fi";
 
 interface MiniCreatePostProps {
   session: Session | null;
@@ -39,14 +39,14 @@ const MiniCreatePost = ({ session }: MiniCreatePostProps) => {
           variant="ghost"
           onClick={() => router.push(pathname + "/submit")}
         >
-          <ImageIcon className="text-zinc-600" />
+          <FiImage className="text-zinc-600 w-6 h-6" />
         </Button>
 
         <Button
           variant="ghost"
           onClick={() => router.push(pathname + "/submit")}
         >
-          <Link2 className="text-zinc-600" />
+          <FiLink2 className="text-zinc-600 w-6 h-6" />
         </Button>
       </div>
     </li>
