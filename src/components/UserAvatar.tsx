@@ -3,7 +3,7 @@ import { AvatarProps } from "@radix-ui/react-avatar";
 
 import { Avatar, AvatarFallback } from "@/components/ui/Avatar";
 import Image from "next/image";
-import { UserIcon } from "lucide-react";
+import { FiUser } from "react-icons/fi";
 
 interface UserAvatarProps extends AvatarProps {
   user: Pick<User, "name" | "image">;
@@ -24,7 +24,7 @@ export function UserAvatar({ user, ...props }: UserAvatarProps) {
       ) : (
         <AvatarFallback>
           <span className="sr-only">{user?.name}</span>
-          <UserIcon className="h-4 w-4" />
+          <FiUser className="h-4 w-4" />
         </AvatarFallback>
       )}
     </Avatar>
