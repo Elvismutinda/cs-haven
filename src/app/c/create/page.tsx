@@ -69,7 +69,7 @@ const Page = () => {
         <div>
           <p className="text-lg font-medium">Name</p>
           <p className="test-xs pb-2">
-            Community names including capitalization cannot be changed.
+            Community names (including capitalization) cannot be changed.
           </p>
 
           <div className="relative">
