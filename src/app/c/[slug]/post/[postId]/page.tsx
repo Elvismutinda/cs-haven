@@ -7,7 +7,7 @@ import { redis } from "@/lib/redis";
 import { formatTimeToNow } from "@/lib/utils";
 import { CachedPost } from "@/types/redis";
 import { Post, User, Vote } from "@prisma/client";
-import { ArrowBigDown, ArrowBigUp, Loader2 } from "lucide-react";
+import { LuArrowBigUp, LuArrowBigDown, LuLoader2 } from "react-icons/lu";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
@@ -40,7 +40,7 @@ const CommunityPostPage = async ({ params }: CommunityPostPageProps) => {
   }
 
   if (!post && !cachedPost) return notFound();
-  
+
   return (
     <div>
       <div className="h-full flex flex-col sm:flex-row items-center sm:items-start justify-between">
@@ -74,7 +74,7 @@ const CommunityPostPage = async ({ params }: CommunityPostPageProps) => {
 
           <Suspense
             fallback={
-              <Loader2 className="h-5 w-5 animate-spin text-zinc-500" />
+              <LuLoader2 className="h-5 w-5 animate-spin text-zinc-500" />
             }
           >
             {/* Comment section */}
@@ -93,17 +93,17 @@ function PostVoteShell() {
     <div className="flex items-center flex-col pr-6 w-20">
       {/* upvote */}
       <div className={buttonVariants({ variant: "ghost" })}>
-        <ArrowBigUp className="h-5 w-5 text-zinc-700" />
+        <LuArrowBigUp className="h-5 w-5 text-zinc-700" />
       </div>
 
       {/* vote count */}
       <div className="text-center py-2 font-medium text-sm text-zinc-900">
-        <Loader2 className="h-3 w-3 animate-spin" />
+        <LuLoader2 className="h-3 w-3 animate-spin" />
       </div>
 
       {/* downvote */}
       <div className={buttonVariants({ variant: "ghost" })}>
-        <ArrowBigDown className="h-5 w-5 text-zinc-700" />
+        <LuArrowBigDown className="h-5 w-5 text-zinc-700" />
       </div>
     </div>
   );
