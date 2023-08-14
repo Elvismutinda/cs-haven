@@ -2,9 +2,8 @@
 
 import { DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";
-import { Loader2, Search } from "lucide-react";
+import { LuLoader2, LuSearch } from "react-icons/lu";
 import * as React from "react";
-
 
 import { cn } from "@/lib/utils";
 import { Dialog, DialogContent } from "./Dialog";
@@ -46,9 +45,9 @@ const CommandInput = React.forwardRef<
 >(({ className, isLoading, ...props }, ref) => (
   <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
     {isLoading ? (
-      <Loader2 className="mr-2 h-4 w-4 shrink-0 opacity-50 animate-spin" />
+      <LuLoader2 className="mr-2 h-4 w-4 shrink-0 opacity-50 animate-spin" />
     ) : (
-      <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+      <LuSearch className="mr-2 h-4 w-4 shrink-0 opacity-50" />
     )}
     <CommandPrimitive.Input
       ref={ref}
