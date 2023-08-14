@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useToast } from "../hooks/use-toast";
 import { Label } from "./ui/Label";
 import { Input } from "./ui/Input";
-import { Loader2 } from "lucide-react";
+import { LuLoader2 } from "react-icons/lu";
 import * as z from "zod";
 import { userAuthSchema } from "@/lib/validators/auth";
 import { useForm } from "react-hook-form";
@@ -120,7 +120,7 @@ const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
             )}
           </div>
           <button className={cn(buttonVariants())} disabled={isLoading}>
-            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {isLoading && <LuLoader2 className="mr-2 h-4 w-4 animate-spin" />}
             Sign In with Email
           </button>
         </div>
@@ -141,7 +141,7 @@ const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
         className="w-full"
       >
         {isGoogleLoading ? (
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          <LuLoader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Image
             className="mr-2"
@@ -160,7 +160,7 @@ const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
         className="w-full"
       >
         {isGithubLoading ? (
-          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+          <LuLoader2 className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Image
             className="mr-2"
