@@ -13,7 +13,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Community, Prisma } from "@prisma/client";
 import axios from "axios";
 import { usePathname, useRouter } from "next/navigation";
-import { Users } from "lucide-react";
+import { FiUsers } from "react-icons/fi";
 import debounce from "lodash.debounce";
 import { useOnClickOutside } from "@/hooks/use-on-click-outside";
 
@@ -86,7 +86,7 @@ const SearchBar = () => {
                   key={community.id}
                   value={community.name}
                 >
-                  <Users className="mr-2 h-4 w-4" />
+                  <FiUsers className="mr-2 h-4 w-4" />
                   <a href={`/c/${community.name}`}>c/{community.name}</a>
                 </CommandItem>
               ))}
