@@ -46,7 +46,7 @@ const BillingForm = () => {
             for now
           </CardDescription>
         </CardHeader>
-        <CardContent>Kindly, click on the button below:</CardContent>
+        <CardContent>Kindly click on the button below:</CardContent>
         <CardFooter className="flex flex-col items-start space-y-2 md:flex-row md:justify-between md:space-x-0">
           <Button
             type="button"
