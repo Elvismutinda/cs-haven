@@ -13,7 +13,7 @@ import axios from "axios";
 import { CommentRequest } from "@/lib/validators/comment";
 import CommentVotes from "./CommentVotes";
 import { Button } from "./ui/Button";
-import { MessageSquare } from "lucide-react";
+import { FiMessageSquare } from "react-icons/fi";
 import { Label } from "./ui/Label";
 import { Textarea } from "./ui/Textarea";
 
@@ -105,7 +105,7 @@ const PostComment = ({
           variant="ghost"
           size="xs"
         >
-          <MessageSquare className="h-4 w-4 mr-1.5" />
+          <FiMessageSquare className="h-4 w-4 mr-1.5" />
           Reply
         </Button>
       </div>
