@@ -25,6 +25,8 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
           user={{ name: user.name || null, image: user.image || null }}
           className="h-8 w-8"
         />
+
+        {/* <span className="absolute bottom-[0.65rem] right-auto rounded-full w-3 h-3 bg-green-500 outline outline-2 outline-zinc-100" /> */}
       </DropdownMenuTrigger>
       <DropdownMenuContent className="bg-white" align="end">
         <div className="flex items-center justify-start gap-2 p-2">
