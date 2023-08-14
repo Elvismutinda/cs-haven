@@ -2,9 +2,9 @@ import CustomFeed from "@/components/homepage/CustomFeed";
 import GeneralFeed from "@/components/homepage/GeneralFeed";
 import { buttonVariants } from "@/components/ui/Button";
 import { getAuthSession } from "@/lib/auth";
-import { HomeIcon } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FiHome } from "react-icons/fi";
 
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
@@ -25,7 +25,7 @@ export default async function Home() {
         <div className="overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last">
           <div className="bg-emerald-100 px-6 py-4">
             <p className="font-semibold py-3 flex items-center gap-1.5">
-              <HomeIcon className="w-4 h-4" />
+              <FiHome className="w-4 h-4" />
               Home
             </p>
           </div>
@@ -56,12 +56,7 @@ export default async function Home() {
                   target="_blank"
                   className="my-2 hover:scale-125 transition duration-300 ease-in-out"
                 >
-                  <Image
-                    src="/github-mark.svg"
-                    width={23}
-                    height={23}
-                    alt="github logo"
-                  />
+                  <FaGithub className="w-6 h-6" />
                 </Link>
 
                 <Link
@@ -69,12 +64,7 @@ export default async function Home() {
                   target="_blank"
                   className="my-2 hover:scale-125 transition duration-300 ease-in-out"
                 >
-                  <Image
-                    src="/discord-alt.svg"
-                    width={23}
-                    height={23}
-                    alt="discord logo"
-                  />
+                  <FaDiscord className="w-6 h-6" />
                 </Link>
               </div>
             </div>
