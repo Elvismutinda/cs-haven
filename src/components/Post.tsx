@@ -2,7 +2,7 @@
 
 import { formatTimeToNow } from "@/lib/utils";
 import { Post, User, Vote } from "@prisma/client";
-import { MessageSquare } from "lucide-react";
+import { FiMessageSquare } from "react-icons/fi";
 import Link from "next/link";
 import { useRef } from "react";
 import EditorOutput from "./EditorOutput";
@@ -79,7 +79,7 @@ const Post = ({
           href={`/c/${communityName}/post/${post.id}`}
           className="w-fit flex items-center gap-2"
         >
-          <MessageSquare className="h-4 w-4" /> {commentAmt} comments
+          <FiMessageSquare className="h-4 w-4" /> {commentAmt} comments
         </Link>
       </div>
     </div>
