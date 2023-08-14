@@ -9,7 +9,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios, { AxiosError } from "axios";
 import { useState } from "react";
 import { Button } from "./ui/Button";
-import { ArrowBigDown, ArrowBigUp } from "lucide-react";
+import { LuArrowBigUp, LuArrowBigDown } from "react-icons/lu";
 import { cn } from "@/lib/utils";
 
 interface CommentVotesProps {
@@ -86,7 +86,7 @@ const CommentVotes = ({
         variant="ghost"
         aria-label="upvote"
       >
-        <ArrowBigUp
+        <LuArrowBigUp
           className={cn("h-5 w-5 text-zinc-700", {
             "text-emerald-500 fill-emerald-500": currentVote?.type === "UP",
           })}
@@ -108,7 +108,7 @@ const CommentVotes = ({
         variant="ghost"
         aria-label="downvote"
       >
-        <ArrowBigDown
+        <LuArrowBigDown
           className={cn("h-5 w-5 text-zinc-700", {
             "text-red-500 fill-red-500": currentVote?.type === "DOWN",
           })}
