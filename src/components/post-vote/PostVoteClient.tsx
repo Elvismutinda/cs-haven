@@ -2,7 +2,7 @@
 
 import { VoteType } from "@prisma/client";
 import { Button } from "../ui/Button";
-import { ArrowBigDown, ArrowBigUp } from "lucide-react";
+import { LuArrowBigDown, LuArrowBigUp } from "react-icons/lu";
 import { useCustomToasts } from "@/hooks/use-custom-toasts";
 import { useEffect, useState } from "react";
 import { usePrevious } from "@mantine/hooks";
@@ -87,7 +87,7 @@ const PostVoteClient = ({
         variant="ghost"
         aria-label="upvote"
       >
-        <ArrowBigUp
+        <LuArrowBigUp
           className={cn("h-5 w-5 text-zinc-700", {
             "text-emerald-500 fill-emerald-500": currentVote === "UP",
           })}
@@ -107,7 +107,7 @@ const PostVoteClient = ({
         variant="ghost"
         aria-label="downvote"
       >
-        <ArrowBigDown
+        <LuArrowBigDown
           className={cn("h-5 w-5 text-zinc-700", {
             "text-red-500 fill-red-500": currentVote === "DOWN",
           })}
