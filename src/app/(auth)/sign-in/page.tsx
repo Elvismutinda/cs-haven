@@ -1,8 +1,8 @@
 import SignIn from "@/components/SignIn";
 import { buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
-import { ChevronLeft } from "lucide-react";
 import Link from "next/link";
+import { FiChevronLeft } from "react-icons/fi";
 
 const page = () => {
   return (
@@ -15,7 +15,7 @@ const page = () => {
             "absolute left-4 top-24 md:left-8 md:top-24"
           )}
         >
-          <ChevronLeft className="mr-2 h-4 w-4" />
+          <FiChevronLeft className="mr-2 h-4 w-4" />
           Home
         </Link>
 
