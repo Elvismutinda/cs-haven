@@ -48,7 +48,7 @@ const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
     if (!signInResult?.ok) {
       return toast({
         title: "Something went wrong.",
-        description: "Your sign in request failed. Please try again.",
+        description: "Your sign in request failed. Please try again later.",
         variant: "destructive",
       });
     }
@@ -56,7 +56,7 @@ const UserAuthForm = ({ className, ...props }: UserAuthFormProps) => {
     return toast({
       title: "Check your email.",
       description:
-        "We've sent you a login link. Be sure to check your spam too.",
+        "A login link has been sent to your email. Be sure to check your spam too.",
     });
   }
 
