@@ -1,4 +1,4 @@
-import BillingForm from "@/components/BillingForm";
+import DonationForm from "@/components/DonationForm";
 import SectionShell from "@/components/SectionShell";
 import SectionHeading from "@/components/SectionHeading";
 import { authOptions, getAuthSession } from "@/lib/auth";
@@ -23,7 +23,7 @@ const page = async () => {
         text="If you're feeling very generous today, throw a coin or two my way. Thanks."
       />
       <div className="grid gap-8">
-        <BillingForm />
+        <DonationForm />
       </div>
     </SectionShell>
   );
