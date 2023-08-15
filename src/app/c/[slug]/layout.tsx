@@ -72,7 +72,7 @@ const Layout = async ({
           <div className="flex flex-col col-span-2 space-y-6">{children}</div>
 
           {/* Community Info sidebar */}
-          <div className="overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last">
+          <div className="overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last md:sticky md:top-20">
             <div className="px-6 py-4">
               <p className="font-semibold py-3">About c/{community.name}</p>
             </div>
