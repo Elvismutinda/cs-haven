@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FaDiscord, FaGithub } from "react-icons/fa";
 import { FiHome } from "react-icons/fi";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 export const dynamic = "force-dynamic";
 export const fetchCache = "force-no-store";
@@ -77,18 +78,11 @@ export default async function Home() {
               <>
                 <div className="flex flex-col gap-x-4 py-3">
                   <h2 className="font-semibold uppercase">Your communities:</h2>
-                  <ul className="overflow-hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                  <ul className="grid grid-cols-2">
                     {subscribedCommunityNames.map((communityName) => (
                       <li key={communityName}>
-                        <Link
-                          href={`/c/${communityName}`}
-                          className={cn(
-                            buttonVariants({
-                              variant: "outline",
-                              className: "mt-4",
-                            })
-                          )}
-                        >
+                        <MdKeyboardDoubleArrowRight className="w-4 h-4 inline-flex" />
+                        <Link href={`/c/${communityName}`} className="w-full">
                           c/{communityName}
                         </Link>
                       </li>
@@ -110,17 +104,10 @@ export default async function Home() {
                 <h2 className="font-semibold uppercase">
                   Popular communities:
                 </h2>
-                <ul className="overflow-hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <ul className="grid grid-cols-2">
                   {topPopularCommunities.map((community) => (
                     <li key={community.id}>
-                      <Link
-                        href={`/c/${community.name}`}
-                        className={cn(
-                          buttonVariants({
-                            className: "mt-4",
-                          })
-                        )}
-                      >
+                      <Link href={`/c/${community.name}`} className="w-full">
                         c/{community.name}
                       </Link>
                     </li>
@@ -143,7 +130,7 @@ export default async function Home() {
                 </Link>
 
                 <Link
-                  href="https://discord.com"
+                  href="https://discord.gg/Ew3ZfE7TY2"
                   target="_blank"
                   className="my-2 hover:scale-125 transition duration-300 ease-in-out"
                 >
