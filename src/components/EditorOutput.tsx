@@ -26,7 +26,7 @@ const style = {
 
 const EditorOutput = ({ content }: EditorOutputProps) => {
   return (
-    // @ts-expect-error
+    
     <Output
       className="text-sm"
       renderers={renderers}
