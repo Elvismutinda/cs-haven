@@ -14,7 +14,7 @@ import { Button, buttonVariants } from "./ui/Button";
 import { LuLoader2 } from "react-icons/lu";
 import { SiBuymeacoffee } from "react-icons/si";
 
-const BillingForm = () => {
+const DonationForm = () => {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   const handleBuyMeACoffee = () => {
@@ -22,7 +22,7 @@ const BillingForm = () => {
     setTimeout(() => {
       window.open("https://buymeacoffee.com/elvismutinda", "_blank");
       setIsLoading(false);
-    }, 1000);
+    }, 100);
   };
 
   return (
@@ -35,10 +35,10 @@ const BillingForm = () => {
             <a className="underline" href="https://stripe.com/" target="_blank">
               <strong>Stripe</strong>
             </a>{" "}
-            for donations but you can donate through{" "}
+            for donations but you can{" "}
             <a
               className="underline"
-              href="https://buymeacoffee.com/"
+              href="https://buymeacoffee.com/elvismutinda"
               target="_blank"
             >
               <strong>Buy me a Coffee</strong>
@@ -64,4 +64,4 @@ const BillingForm = () => {
   );
 };
 
-export default BillingForm;
+export default DonationForm;
