@@ -77,7 +77,7 @@ export default async function Home() {
               <>
                 <div className="flex flex-col gap-x-4 py-3">
                   <h2 className="font-semibold uppercase">Your communities:</h2>
-                  <ul>
+                  <ul className="overflow-hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                     {subscribedCommunityNames.map((communityName) => (
                       <li key={communityName}>
                         <Link
@@ -110,7 +110,7 @@ export default async function Home() {
                 <h2 className="font-semibold uppercase">
                   Popular communities:
                 </h2>
-                <ul className="flex">
+                <ul className="overflow-hidden grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                   {topPopularCommunities.map((community) => (
                     <li key={community.id}>
                       <Link
@@ -131,7 +131,7 @@ export default async function Home() {
 
             <div className="flex flex-col justify-center">
               <p className="text-center">
-                Join our socials. Everyone is welcome
+                Check/Join our socials. Everyone is welcome
               </p>
               <div className="flex flex-row gap-6 justify-center">
                 <Link
