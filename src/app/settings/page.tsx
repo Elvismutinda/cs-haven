@@ -17,20 +17,22 @@ const page = async () => {
   }
 
   return (
-    <SectionShell>
-      <SectionHeading
-        heading="Settings"
-        text="Manage your account settings here."
-      />
-      <div className="grid gap-10">
-        <UserNameForm
-          user={{
-            id: session.user.id,
-            username: session.user.username || "",
-          }}
+    <div className="max-w-4xl mx-auto py-12">
+      <SectionShell>
+        <SectionHeading
+          heading="Settings"
+          text="Manage your account settings here."
         />
-      </div>
-    </SectionShell>
+        <div className="grid gap-10">
+          <UserNameForm
+            user={{
+              id: session.user.id,
+              username: session.user.username || "",
+            }}
+          />
+        </div>
+      </SectionShell>
+    </div>
   );
 };
 
