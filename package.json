@@ -1,12 +1,18 @@
 {
-  "name": "reddit-clone",
+  "name": "cs_haven",
   "version": "0.1.0",
   "private": true,
+  "author": {
+    "name": "Elvocool",
+    "url": "https://github.com/Elvismutinda"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "turbo": "next dev --turbo",
     "start": "next start",
     "lint": "next lint",
+    "preview": "next build && next start",
     "postinstall": "prisma generate"
   },
   "dependencies": {
