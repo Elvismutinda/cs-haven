@@ -4,15 +4,17 @@ import SectionShell from "@/components/SectionShell";
 
 const DonationLoading = () => {
   return (
-    <SectionShell>
-      <SectionHeading
-        heading="Settings"
-        text="Manage your account settings here."
-      />
-      <div className="grid gap-10">
-        <CardSkeleton />
-      </div>
-    </SectionShell>
+    <div className="max-w-4xl mx-auto py-12">
+      <SectionShell>
+        <SectionHeading
+          heading="Settings"
+          text="Manage your account settings here."
+        />
+        <div className="grid gap-10">
+          <CardSkeleton />
+        </div>
+      </SectionShell>
+    </div>
   );
 };
 
