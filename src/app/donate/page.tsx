@@ -17,15 +17,17 @@ const page = async () => {
   }
 
   return (
-    <SectionShell>
-      <SectionHeading
-        heading="Donate to Creator"
-        text="If you're feeling very generous today, throw a coin or two my way. Thanks."
-      />
-      <div className="grid gap-8">
-        <DonationForm />
-      </div>
-    </SectionShell>
+    <div className="max-w-4xl mx-auto py-12">
+      <SectionShell>
+        <SectionHeading
+          heading="Donate to Creator"
+          text="If you're feeling very generous today, throw a coin or two my way. Thanks."
+        />
+        <div className="grid gap-8">
+          <DonationForm />
+        </div>
+      </SectionShell>
+    </div>
   );
 };
 
