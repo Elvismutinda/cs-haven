@@ -31,7 +31,7 @@ const DonationForm = () => {
         <CardHeader>
           <CardTitle>Donation Details</CardTitle>
           <CardDescription>
-            I'm working on integrating the app with{" "}
+            I&apos;m working on integrating the app with{" "}
             <a className="underline" href="https://stripe.com/" target="_blank">
               <strong>Stripe</strong>
             </a>{" "}
@@ -43,7 +43,7 @@ const DonationForm = () => {
             >
               <strong>Buy me a Coffee</strong>
             </a>{" "}
-            for now
+            for now.
           </CardDescription>
         </CardHeader>
         <CardContent>Kindly click on the button below:</CardContent>
