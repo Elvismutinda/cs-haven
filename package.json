@@ -2,10 +2,6 @@
   "name": "cs_haven",
   "version": "0.1.0",
   "private": true,
-  "author": {
-    "name": "Elvocool",
-    "url": "https://github.com/Elvismutinda"
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
