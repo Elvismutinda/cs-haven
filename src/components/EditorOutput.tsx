@@ -26,7 +26,6 @@ const style = {
 
 const EditorOutput = ({ content }: EditorOutputProps) => {
   return (
-    
     <Output
       className="text-sm"
       renderers={renderers}
