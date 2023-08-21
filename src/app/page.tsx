@@ -4,7 +4,6 @@ import GeneralFeed from "@/components/homepage/GeneralFeed";
 import { buttonVariants } from "@/components/ui/Button";
 import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
-import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FaDiscord, FaGithub } from "react-icons/fa";
 import { FiHome } from "react-icons/fi";
