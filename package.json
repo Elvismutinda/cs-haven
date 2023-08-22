@@ -1,6 +1,7 @@
 {
   "name": "cs_haven",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -70,6 +71,7 @@
   },
   "devDependencies": {
     "@types/editorjs__header": "^2.6.0",
-    "@types/lodash.debounce": "^4.0.7"
+    "@types/lodash.debounce": "^4.0.7",
+    "cypress": "^12.17.4"
   }
 }
