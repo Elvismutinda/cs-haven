@@ -76,9 +76,11 @@ const Layout = async ({
           <div className="overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last md:sticky md:top-20">
             <div className="px-6 py-4 flex justify-between">
               <p className="font-semibold py-3">About c/{community.name}</p>
-              <CommunityOperations
-                community={{ id: community.id, name: community.name }}
-              />
+              <div className="pt-4 pb-0">
+                <CommunityOperations
+                  community={{ id: community.id, name: community.name }}
+                />
+              </div>
             </div>
 
             <dl className="divide-y divide-gray-100 px-6 py-4 text-sm leading-6 bg-white">

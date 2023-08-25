@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import EditorOutput from "./EditorOutput";
 import PostVoteClient from "./post-vote/PostVoteClient";
+import PostOperations from "./PostOperations";
 
 type PartialVote = Pick<Vote, "type">;
 
@@ -71,6 +72,9 @@ const Post = ({
               <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-white to-transparent"></div>
             ) : null}
           </div>
+        </div>
+        <div className="pt-1">
+          <PostOperations post={{ id: post.id, title: post.title }} />
         </div>
       </div>
 

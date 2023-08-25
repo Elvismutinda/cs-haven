@@ -20,7 +20,7 @@ import {
 } from "./ui/AlertDialog";
 import { LuLoader2 } from "react-icons/lu";
 import { FiTrash } from "react-icons/fi";
-import { FaEllipsisH } from "react-icons/fa";
+import { FaEllipsisV } from "react-icons/fa";
 import { toast } from "@/hooks/use-toast";
 import Link from "next/link";
 
@@ -53,7 +53,7 @@ const PostOperations = ({ post }: PostOperationsProps) => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger>
-          <FaEllipsisH className="h-4 w-4" />
+          <FaEllipsisV className="h-4 w-4" />
           <span className="sr-only">Open</span>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
@@ -62,7 +62,6 @@ const PostOperations = ({ post }: PostOperationsProps) => {
               Edit
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuSeparator />
           <DropdownMenuItem
             className="flex cursor-pointer items-center text-destructive focus:text-destructive"
             onSelect={() => setShowDeleteAlert(true)}
