@@ -7,13 +7,18 @@ Built with every cool aspect in Next.js 13.
 > **Warning**
 > This app is a work in progress. I will probably deploy it later on for students to test it.
 
+>
+> If you'd like to contribute to the project kindly create use Github pull requests. Consult 
+> [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more 
+> information on using pull requests.
+
 ## Features 
 
 - API Routes using **Next.js Api Routes**
 - Authentication using **NextAuth.js**
 - ORM using **Prisma**
 - Styling using **Tailwind CSS**
-- Donating using **Stripe**
+- Donating using **Stripe** 
 - Validations using **Zod**
 - Written in **TypeScript**
 - UI components built using **shadcn**
