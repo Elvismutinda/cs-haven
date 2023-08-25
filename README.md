@@ -8,7 +8,7 @@ Built with every cool aspect in Next.js 13.
 > This app is a work in progress. I will probably deploy it later on for students to test it.
 
 >
-> If you'd like to contribute to the project kindly create use Github pull requests. Consult 
+> If you're a non-project member and you'd like to contribute to the project kindly use Github pull requests. Consult 
 > [GitHub Help](https://help.github.com/articles/about-pull-requests/) for more 
 > information on using pull requests.
 
