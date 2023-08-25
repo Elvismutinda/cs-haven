@@ -8,6 +8,7 @@ import { buttonVariants } from "@/components/ui/Button";
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import ToFeedButton from "@/components/ToFeedButton";
+import CommunityOperations from "@/components/CommunityOperations";
 
 export const metadata: Metadata = {
   title: "CS Haven",
@@ -73,8 +74,11 @@ const Layout = async ({
 
           {/* Community Info sidebar */}
           <div className="overflow-hidden h-fit rounded-lg border border-gray-200 order-first md:order-last md:sticky md:top-20">
-            <div className="px-6 py-4">
+            <div className="px-6 py-4 flex justify-between">
               <p className="font-semibold py-3">About c/{community.name}</p>
+              <CommunityOperations
+                community={{ id: community.id, name: community.name }}
+              />
             </div>
 
             <dl className="divide-y divide-gray-100 px-6 py-4 text-sm leading-6 bg-white">
