@@ -74,7 +74,7 @@ const PostOperations = ({ post }: PostOperationsProps) => {
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>
-              Are you sure you want to delete this community?
+              Are you sure you want to delete this post?
             </AlertDialogTitle>
             <AlertDialogDescription>
               This cannot be undone!
