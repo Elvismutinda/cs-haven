@@ -35,8 +35,8 @@ Built with every cool aspect in Next.js 13.
 
 ## Future functionalities
 
-- [x] Users follow each other (Maybe. Talk to me nicely).
-- [x] Donations (Might take a while to get into).
+- [x] Users follow each other (Maybe).
+- [x] Donations using stripe (Might take a while to get into).
 
 ## Running Locally
 
@@ -56,24 +56,13 @@ Built with every cool aspect in Next.js 13.
 2. Install dependencies.
 
    ```sh
-   npm install
+   pnpm install
     ```
-
-   If you're using yarn:
-
-   ```sh
-   yarn
-   ```
 
 3. Copy `.env.example` to `.env` and update the variables.  
 
 4. Start the development server:
 
    ```sh
-   npm run dev
-   ```
-   Or if you're using yarn:
-
-   ```sh
-   yarn dev
+   pnpm dev
    ```
