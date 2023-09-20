@@ -42,7 +42,7 @@ Built with every cool aspect in Next.js 13.
 
 #### Prerequisites (If you want to create a copy of the site)
 
-* Node v14 +.
+* Node v16.14 or later.
 * Database of your choice.
 * NextAuth secret.
 * Google cloud provider credentials.
