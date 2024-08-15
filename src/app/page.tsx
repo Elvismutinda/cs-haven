@@ -15,44 +15,44 @@ export const fetchCache = "force-no-store";
 export default async function Home() {
   const session = await getAuthSession();
 
-  const communities = await db.community.findMany({
-    include: {
-      subscribers: true,
-    },
-  });
+  // const communities = await db.community.findMany({
+  //   include: {
+  //     subscribers: true,
+  //   },
+  // });
 
-  const popularCommunities = communities.sort(
-    (a, b) => b.subscribers.length - a.subscribers.length
-  );
+  // const popularCommunities = communities.sort(
+  //   (a, b) => b.subscribers.length - a.subscribers.length
+  // );
 
-  const topPopularCommunities = popularCommunities.slice(0, 10);
+  // const topPopularCommunities = popularCommunities.slice(0, 10);
 
-  let subscribedCommunityNames: string[] = [];
+  // let subscribedCommunityNames: string[] = [];
 
-  if (session) {
-    const user = await db.user.findUnique({
-      where: {
-        id: session.user.id,
-      },
-      include: {
-        subscriptions: {
-          select: {
-            community: {
-              select: {
-                name: true,
-              },
-            },
-          },
-        },
-      },
-    });
+  // if (session) {
+  //   const user = await db.user.findUnique({
+  //     where: {
+  //       id: session.user.id,
+  //     },
+  //     include: {
+  //       subscriptions: {
+  //         select: {
+  //           community: {
+  //             select: {
+  //               name: true,
+  //             },
+  //           },
+  //         },
+  //       },
+  //     },
+  //   });
 
-    if (user) {
-      subscribedCommunityNames = user.subscriptions.map(
-        (sub) => sub.community.name
-      );
-    }
-  }
+  //   if (user) {
+  //     subscribedCommunityNames = user.subscriptions.map(
+  //       (sub) => sub.community.name
+  //     );
+  //   }
+  // }
 
   return (
     <>
@@ -76,7 +76,7 @@ export default async function Home() {
             {session ? (
               <>
                 <div className="flex flex-col gap-x-4 py-3">
-                  <h2 className="font-semibold uppercase">Your communities:</h2>
+                  {/* <h2 className="font-semibold uppercase">Your communities:</h2>
                   <ul className="grid grid-cols-2">
                     {subscribedCommunityNames.map((communityName) => (
                       <li key={communityName}>
@@ -86,7 +86,7 @@ export default async function Home() {
                         </Link>
                       </li>
                     ))}
-                  </ul>
+                  </ul> */}
 
                   <Link
                     className={buttonVariants({
@@ -103,7 +103,7 @@ export default async function Home() {
                 <h2 className="font-semibold uppercase">
                   Popular communities:
                 </h2>
-                <ul className="grid grid-cols-2">
+                {/* <ul className="grid grid-cols-2">
                   {topPopularCommunities.map((community) => (
                     <li key={community.id}>
                       <Link href={`/c/${community.name}`} className="w-full">
@@ -111,7 +111,7 @@ export default async function Home() {
                       </Link>
                     </li>
                   ))}
-                </ul>
+                </ul> */}
               </div>
             )}
 
