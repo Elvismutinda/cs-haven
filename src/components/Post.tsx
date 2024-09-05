@@ -1,7 +1,7 @@
 "use client";
 
 import { formatTimeToNow } from "@/lib/utils";
-import { Post, User, Vote } from "@prisma/client";
+import type { Post, User, Vote } from "@prisma/client";
 import { FiMessageSquare } from "react-icons/fi";
 import Link from "next/link";
 import { useRef } from "react";
